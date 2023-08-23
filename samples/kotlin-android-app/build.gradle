@@ -8,7 +8,9 @@ ext {
 }
 
 android {
+    namespace = "com.amplitude.android.sample"
     compileSdk 31
+    buildFeatures.buildConfig = true
 
     defaultConfig {
         applicationId "com.amplitude.android.sample"

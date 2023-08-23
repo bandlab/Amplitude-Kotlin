@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'com.kezong.fat-aar'
 }
 
 ext {
@@ -17,6 +16,8 @@ version = PUBLISH_VERSION
 
 android {
     compileSdk 31
+    buildFeatures.buildConfig = true
+    namespace = "com.amplitude.android"
 
     defaultConfig {
         multiDexEnabled true
@@ -52,12 +53,12 @@ android {
 }
 
 dependencies {
-    embed project(':common')
-    embed project(':common-jvm')
-    embed project(':common-android')
-    embed project(':core')
-    embed project(':event-bridge')
-    embed project(':id')
+    implementation project(':common')
+    implementation project(':common-jvm')
+    implementation project(':common-android')
+    implementation project(':core')
+    implementation project(':event-bridge')
+    implementation project(':id')
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     implementation 'com.amplitude:analytics-connector:1.0.0'
